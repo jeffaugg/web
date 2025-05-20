@@ -1,0 +1,128 @@
+:root {
+    --bg: #fff;
+    --text: #333;
+    --header-bg: #1abc9c;
+    --header-text: #fff;
+    --nav-bg: #333;
+    --nav-text: #fff;
+    --nav-hover-bg: #ddd;
+    --nav-hover-text: #000;
+    --aside-bg: #f1f1f1;
+    --main-bg: #fff;
+    --footer-bg: #ddd;
+  }
+  
+  [data-theme="dark"] {
+    --bg: #181818;
+    --text: #e0e0e0;
+    --header-bg: #00695c;
+    --header-text: #e0e0e0;
+    --nav-bg: #212121;
+    --nav-text: #e0e0e0;
+    --nav-hover-bg: #373737;
+    --nav-hover-text: #fff;
+    --aside-bg: #282828;
+    --main-bg: #202020;
+    --footer-bg: #282828;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  .notice {
+    background: #ffeb3b;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .header button {
+    position: absolute;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--header-text);
+  }
+  #theme-toggle { right: 60px; }
+  .menu-toggle  { right: 20px; display: none; }
+  
+  .navbar {
+    background: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .navbar .nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  .navbar .nav-links li a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: var(--nav-text);
+    text-align: center;
+  }
+  .navbar .nav-links li a:hover {
+    background: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .side {
+    flex: 1 1 30%;
+    background: var(--aside-bg);
+    padding: 20px;
+  }
+  .main {
+    flex: 1 1 70%;
+    background: var(--main-bg);
+    padding: 20px;
+  }
+  article + article {
+    margin-top: 2rem;
+  }
+  
+  .footer {
+    background: var(--footer-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .row { flex-direction: column; }
+    .navbar .nav-links {
+      flex-direction: column;
+      display: none;
+    }
+    .navbar .nav-links.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+  

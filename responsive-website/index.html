@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA & Tecnologia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <section class="notice">
+    <p>🔔 Redimensione a janela para ver o efeito responsivo.</p>
+  </section>
+
+  <header class="header">
+    <h1>IA & Tecnologia</h1>
+    <button id="theme-toggle" aria-label="Alternar modo escuro/claro">🌓</button>
+    <!-- Botão hambúrguer (aparece só em telas pequenas) -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#sobre-ia">Sobre IA</a></li>
+      <li><a href="#aplicacoes">Aplicações</a></li>
+      <li><a href="#etica">Ética</a></li>
+      <li><a href="#ml">Machine Learning</a></li>
+      <li><a href="#dl">Deep Learning</a></li>
+    </ul>
+  </nav>
+
+  <div class="row">
+    <aside class="side">
+      <section id="sobre-ia">
+        <h2>O que é Inteligência Artificial?</h2>
+        <p>
+          Inteligência Artificial (IA) é a área da ciência da computação que estuda a criação de sistemas capazes 
+          de realizar tarefas que, normalmente, requerem inteligência humana, como reconhecimento de fala, visão 
+          computacional e tomada de decisões.
+        </p>
+      </section>
+
+      <section id="aplicacoes">
+        <h3>Principais Aplicações</h3>
+        <ul>
+          <li>Assistentes virtuais (Siri, Alexa, Google Assistant)</li>
+          <li>Sistemas de recomendação (Netflix, Amazon)</li>
+          <li>Veículos autônomos</li>
+          <li>Diagnóstico médico por imagem</li>
+        </ul>
+      </section>
+
+      <section id="etica">
+        <h3>Questões Éticas</h3>
+        <p>
+          O avanço rápido da IA traz preocupações sobre privacidade, viés algorítmico, segurança e
+          impacto no mercado de trabalho. É imprescindível um desenvolvimento responsável.
+        </p>
+      </section>
+    </aside>
+
+    <main class="main">
+      <article id="ml">
+        <h2>Machine Learning</h2>
+        <time datetime="2025-05-15">15 de Maio de 2025</time>
+        <p>
+          Machine Learning é um subconjunto da IA que permite que sistemas aprendam e melhorem automaticamente 
+          com experiência sem serem explicitamente programados. Utiliza algoritmos como regressão, árvores de decisão 
+          e máquinas de vetor de suporte.
+        </p>
+      </article>
+
+      <article id="dl">
+        <h2>Deep Learning</h2>
+        <time datetime="2025-05-16">16 de Maio de 2025</time>
+        <p>
+          Deep Learning é uma subárea do Machine Learning baseada em redes neurais profundas, com múltiplas 
+          camadas ocultas, capaz de processar grandes volumes de dados e alcançar desempenho de nível humano em 
+          tarefas como reconhecimento de imagem e voz.
+        </p>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 IA & Tecnologia</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute(
+        'data-theme',
+        current === 'dark' ? 'light' : 'dark'
+      );
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    menuToggle.addEventListener('mouseover', () => navLinks.classList.add('active'));
+    navLinks.addEventListener('mouseleave', () => navLinks.classList.remove('active'));
+  </script>
+
+</body>
+</html>
